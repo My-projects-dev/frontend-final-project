@@ -1,0 +1,40 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.dropdown {
+  position: relative;
+
+  button {
+    background-color: transparent;
+    @include mixins.font();
+    border: none;
+    outline: none;
+    color: variables.$secondary-color;
+
+    &:hover {
+      color: variables.$primary_color;
+    }
+  }
+
+  & > ul {
+    position: absolute;
+    top: 37px;
+    background-color: #fff;
+    width: 150px;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 1;
+
+    & > li {
+      padding: 5px 10px;
+      overflow: hidden;
+      background-color: #fff;
+
+      &:hover {
+        background-color: rgb(231, 230, 230);
+        cursor: pointer;
+      }
+    }
+  }
+}

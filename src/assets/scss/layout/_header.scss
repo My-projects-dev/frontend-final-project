@@ -1,0 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+header {
+  color: variables.$secondary-color;
+}

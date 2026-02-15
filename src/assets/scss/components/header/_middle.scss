@@ -1,0 +1,106 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.header-middle {
+  @include mixins.flex($direction: row, $justify: space-between, $gap: 50px);
+  padding: 30px 8%;
+
+  &__search_wrp {
+    @include mixins.flex($direction: row, $justify: space-between, $gap: 5px);
+    flex: 1;
+    max-width: 600px;
+
+    .header-middle__search_wrp__categories {
+      @include mixins.flex($direction: row, $justify: space-between, $gap: 5px);
+      border: variables.$secondary-color-opocity;
+      height: 47px;
+      padding-left: 15px;
+      padding-right: 6px;
+      width: 190px;
+      border-radius: 5px;
+
+      &:hover {
+        color: inherit;
+      }
+
+      & + ul {
+        top: 50px;
+        width: 190px;
+      }
+    }
+
+    &__search_button {
+      background: transparent;
+      padding: 10px;
+      border: variables.$secondary-color-opocity;
+      border-radius: 5px;
+      color: variables.$secondary-color-opocity;
+    }
+
+    .pe-7s-search {
+      font-size: 23px;
+    }
+
+    &__search_button:hover {
+      color: #fff;
+      background-color: variables.$primary-color;
+    }
+
+    &__search_input {
+      padding: 15px;
+      border: variables.$secondary-color-opocity;
+      border-radius: 5px;
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  &__icon_wrp {
+    @include mixins.flex($direction: row, $justify: space-between, $gap: 15px);
+
+    a {
+      color: inherit;
+    }
+    .users,
+    .like {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .searh_container,
+    .togle_menu {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .header-middle {
+    &__search_wrp {
+      display: none;
+    }
+
+    &__icon_wrp {
+      .searh_container,
+      .togle_menu {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-middle__icon_wrp {
+    .users,
+    .like {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header-middle {
+    gap: 1px;
+    padding: 26px 5%;
+  }
+}

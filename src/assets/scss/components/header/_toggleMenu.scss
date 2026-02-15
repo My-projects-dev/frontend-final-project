@@ -1,0 +1,90 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.togle_menu {
+  .pe-7s-menu {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+.toggle_menu_wrp {
+  background-color: rgba(55, 55, 55, 0.5);
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.side_menu {
+  @include mixins.flex($justify: space-between);
+  width: 350px;
+  height: 100%;
+  background-color: #333333;
+  color: #c0c0c0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 50px 30px;
+  overflow: auto;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  .pe-7s-close {
+    align-self: flex-end;
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.toggle_nav {
+  align-self: flex-start;
+  & > ul {
+    @include mixins.flex($justify: flex-start, $align: flex-start, $gap: 30px);
+
+    li > a {
+      color: inherit;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.toggle_middle_menu {
+  @include mixins.flex($gap: 20px);
+  &__list {
+    @include mixins.flex($direction: row);
+    flex-wrap: wrap;
+
+    li:not(:last-child) {
+      border-right: variables.$secondary-color-opocity;
+    }
+
+    li {
+      padding-inline: 6px;
+    }
+  }
+
+  .toggle_language,
+  .toggle_currency {
+    color: inherit;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .side_menu {
+    width: 90%;
+  }
+}

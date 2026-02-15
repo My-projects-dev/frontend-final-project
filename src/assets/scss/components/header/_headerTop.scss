@@ -1,0 +1,44 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.header-top {
+  @include mixins.flex(
+    $direction: row,
+    $justify: space-between,
+    $align: flex-start
+  );
+  border-bottom: variables.$secondary-color-opocity;
+  padding: variables.$header_padding;
+
+  & > ul {
+    @include mixins.flex(
+      $direction: row,
+      $justify: flex-start,
+      $align: flex-start
+    );
+
+    & > li {
+      padding-right: 10px;
+
+      &:not(:last-child) {
+        border-right: variables.$secondary-color-opocity;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  &__delivery {
+    span {
+      color: variables.$primary_color;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-top {
+    display: none;
+  }
+}

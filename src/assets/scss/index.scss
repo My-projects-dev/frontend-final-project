@@ -1,0 +1,18 @@
+@use "./abstracts/mixins";
+@use "./abstracts/variables";
+
+@use "./base/reset";
+
+@use "./utilities/dropdown";
+@use "./utilities/button";
+
+@use "./components/header/toggleMenu";
+@use "./components/header/shopBag";
+@use "./components/header/search";
+@use "./components/header/loginLogo";
+@use "./components/header/headerTop";
+@use "./components/header/middle";
+@use "./components/header/navbar";
+
+@use "./layout/header";
+@use "./layout/footer";

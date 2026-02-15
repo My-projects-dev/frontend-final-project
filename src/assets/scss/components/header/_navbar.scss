@@ -1,0 +1,23 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+nav.header_nav {
+  background-color: variables.$primary_color;
+  padding: 15px;
+  width: 100%;
+
+  ul {
+    @include mixins.flex($direction: row, $gap: 30px);
+
+    li > a {
+      color: #fff;
+      @include mixins.font(500, 20px);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  nav.header_nav {
+    display: none;
+  }
+}
