@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
-import datas from "../Datas";
-
-const { routes } = datas;
+import routes from "./routes";
 
 function AppRoutes() {
   return (

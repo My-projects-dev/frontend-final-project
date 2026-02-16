@@ -1,0 +1,167 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+section.slider_section .slider_area {
+  background: url("../../../img/slider/slider_background.webp");
+  background-position: bottom;
+  width: 100%;
+  height: 680px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover .btn-angle {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-rght,
+  .btn-left {
+    background-color: #fff;
+    position: absolute;
+    font-size: 3rem;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      background-color 0.2s;
+
+    &:hover {
+      background-color: variables.$primary-color;
+      color: #fff;
+    }
+  }
+
+  .btn-left {
+    left: 10px;
+  }
+
+  .btn-rght {
+    right: 10px;
+  }
+
+  .slider-top-img {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+  }
+
+  .slider-bottom-img {
+    position: absolute;
+    bottom: -100px;
+    left: 15px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .slide_wrp .slide {
+    @include mixins.flex($direction: row);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    &__data_area,
+    &__img_area {
+      width: 50%;
+    }
+
+    &__data_area {
+      @include mixins.flex($align: flex-start, $gap: 40px);
+      padding-left: 8%;
+      h2 {
+        @include mixins.font($size: 4.5rem);
+      }
+
+      p {
+        @include mixins.font($size: 1.5rem);
+        color: variables.$secondary-color;
+      }
+    }
+
+    &__img_area img {
+      max-width: 555px;
+    }
+
+    a {
+      color: #fff;
+      background-color: variables.$primary-color;
+      padding: 15px 30px;
+    }
+
+    a:hover {
+      color: black;
+      background-color: #fff;
+    }
+  }
+
+  .dot_area {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+
+  .dot_area span.active {
+    background-color: variables.$primary-color;
+  }
+}
+
+@media (max-width: 767px) {
+  section.slider_section .slider_area {
+    height: 480px;
+
+    .btn-angle {
+      display: none !important;
+    }
+
+    .dot_area {
+      display: flex !important;
+    }
+
+    .slide_wrp {
+      .slider-top-img,
+      .slider-top-img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    .slide_wrp .slide .slide__data_area {
+      padding-left: 3%;
+
+      h2,
+      p {
+        @include mixins.font($size: 1.5rem);
+        color: inherit !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 999px) {
+  section.slider_section .slider_area .slide_wrp {
+    .slide__data_area {
+      h2 {
+        @include mixins.font($size: 3rem);
+        color: inherit;
+      }
+    }
+  }
+}

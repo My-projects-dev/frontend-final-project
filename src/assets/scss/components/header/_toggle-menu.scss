@@ -69,7 +69,7 @@
     flex-wrap: wrap;
 
     li:not(:last-child) {
-      border-right: variables.$secondary-color-opocity;
+      border-right: variables.$secondary-opocity-border;
     }
 
     li {

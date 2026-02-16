@@ -7,7 +7,7 @@
     $justify: space-between,
     $align: flex-start
   );
-  border-bottom: variables.$secondary-color-opocity;
+  border-bottom: variables.$secondary-opocity-border;
   padding: variables.$header_padding;
 
   & > ul {
@@ -21,7 +21,7 @@
       padding-right: 10px;
 
       &:not(:last-child) {
-        border-right: variables.$secondary-color-opocity;
+        border-right: variables.$secondary-opocity-border;
       }
 
       a {

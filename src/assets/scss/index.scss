@@ -1,18 +1,29 @@
+// abstract
 @use "./abstracts/mixins";
 @use "./abstracts/variables";
 
+// base
 @use "./base/reset";
+@use "./base/global";
 
+// utilities
 @use "./utilities/dropdown";
 @use "./utilities/button";
 
-@use "./components/header/toggleMenu";
-@use "./components/header/shopBag";
+// component
+@use "./components/header/toggle-menu";
+@use "./components/header/shop-bag";
 @use "./components/header/search";
-@use "./components/header/loginLogo";
-@use "./components/header/headerTop";
+@use "./components/header/login-logo";
+@use "./components/header/header-top";
 @use "./components/header/middle";
 @use "./components/header/navbar";
 
+@use "./components/home/slider";
+
+// layout
 @use "./layout/header";
 @use "./layout/footer";
+
+// pages
+@use "./pages/not-found";

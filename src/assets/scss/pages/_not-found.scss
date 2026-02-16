@@ -1,0 +1,29 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.not_found_wrp {
+  @include mixins.flex($gap: 30px);
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  color: #444444;
+  text-align: center;
+
+  h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+
+  p {
+    max-width: 590px;
+  }
+
+  a {
+    background-color: variables.$primary-color;
+    color: #fff;
+    padding: 15px 20px;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}

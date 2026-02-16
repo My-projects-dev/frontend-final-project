@@ -2,18 +2,18 @@
 @use "../../abstracts/variables";
 
 .header-middle {
-  @include mixins.flex($direction: row, $justify: space-between, $gap: 50px);
+  @include mixins.flex($direction: row, $justify: space-between, $gap: 60px);
   padding: 30px 8%;
 
   &__search_wrp {
     @include mixins.flex($direction: row, $justify: space-between, $gap: 5px);
     flex: 1;
-    max-width: 600px;
+    // max-width: 600px;
 
     .header-middle__search_wrp__categories {
       @include mixins.flex($direction: row, $justify: space-between, $gap: 5px);
-      border: variables.$secondary-color-opocity;
-      height: 47px;
+      border: variables.$secondary-opocity-border;
+      height: 50px;
       padding-left: 15px;
       padding-right: 6px;
       width: 190px;
@@ -31,10 +31,11 @@
 
     &__search_button {
       background: transparent;
-      padding: 10px;
-      border: variables.$secondary-color-opocity;
+      width: 50px;
+      height: 50px;
+      border: variables.$secondary-opocity-border;
       border-radius: 5px;
-      color: variables.$secondary-color-opocity;
+      color: variables.$secondary-opocity-border;
     }
 
     .pe-7s-search {
@@ -47,8 +48,10 @@
     }
 
     &__search_input {
-      padding: 15px;
-      border: variables.$secondary-color-opocity;
+      height: 50px;
+      font-size: 1rem;
+      padding-inline: 10px;
+      border: variables.$secondary-opocity-border;
       border-radius: 5px;
       flex: 1;
       min-width: 0;

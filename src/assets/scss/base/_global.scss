@@ -1,0 +1,7 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+::selection {
+  background: variables.$primary-color;
+  color: #fff;
+}

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import datas from "../../../Datas";
-
-const { routes } = datas;
+import routes from "../../../router/routes";
 
 function Navbar({ className = "" }) {
   return (
