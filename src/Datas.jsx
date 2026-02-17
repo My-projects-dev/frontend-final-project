@@ -205,7 +205,7 @@ const slider = [
     image:
       "https://template.hasthemes.com/harmic/harmic/assets/images/slider/inner-img/2-1-601x426.png",
     title: "Natural & Organic",
-    subtitle: "-40% Offer All Products.",
+    subtitle: "-50% Offer All Products.",
   },
 ];
 

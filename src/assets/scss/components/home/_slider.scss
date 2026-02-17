@@ -82,10 +82,44 @@ section.slider_section .slider_area {
         @include mixins.font($size: 1.5rem);
         color: variables.$secondary-color;
       }
+
+      p,
+      h2,
+      a {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      .title-enter {
+        animation: slideIn 0.6s ease forwards 0.3s;
+      }
+      .subtitle-enter {
+        animation: slideIn 0.6s ease forwards 0.6s;
+      }
+      .btn-enter {
+        animation: slideIn 0.6s ease forwards 0.9s;
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
 
     &__img_area img {
       max-width: 555px;
+      opacity: 0;
+      transform: scale(1.05);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    &__img_area.fade-in img {
+      opacity: 1;
+      transform: scale(1);
     }
 
     a {

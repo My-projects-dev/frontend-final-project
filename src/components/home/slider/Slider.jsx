@@ -8,21 +8,21 @@ const { slider } = datas;
 
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === slider.length - 1 ? 0 : prev + 1));
+      changeSlide((currentIndex + 1) % slider.length);
     }, 7000);
-
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
-  const leftClick = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slider.length - 1 : prev - 1));
-  };
-
-  const rightClick = () => {
-    setCurrentIndex((prev) => (prev === slider.length - 1 ? 0 : prev + 1));
+  const changeSlide = (i) => {
+    setVisible(false);
+    setTimeout(() => {
+      setCurrentIndex(i);
+      setVisible(true);
+    }, 400);
   };
 
   const slide = slider[currentIndex];
@@ -32,7 +32,11 @@ function Slider() {
       <div className="slider_area">
         <i
           className="pe-7s-angle-left btn-left btn-angle"
-          onClick={leftClick}
+          onClick={() =>
+            changeSlide(
+              currentIndex - 1 < 0 ? slider.length - 1 : currentIndex - 1,
+            )
+          }
         ></i>
 
         <div className="slide_wrp">
@@ -42,11 +46,18 @@ function Slider() {
 
           <div className="slide">
             <div className="slide__data_area">
-              <p>{slide.title}</p>
-              <h2>{slide.subtitle}</h2>
-              <Link to="/shop">SHOP NOW</Link>
+              <p className={visible ? "title-enter" : ""}>{slide.title}</p>
+              <h2 className={visible ? "subtitle-enter" : ""}>
+                {slide.subtitle}
+              </h2>
+              <Link to="/shop" className={visible ? "btn-enter" : ""}>
+                SHOP NOW
+              </Link>
             </div>
-            <div className="slide__img_area">
+
+            <div
+              className={`slide__img_area ${visible ? "fade-in" : "fade-out"}`}
+            >
               <img src={slide.image} alt={slide.title} />
             </div>
           </div>
@@ -57,20 +68,21 @@ function Slider() {
         </div>
 
         <div className="dot_area">
-          {slider.map((item, index) => (
+          {slider.map((_, idx) => (
             <span
-              className={index == currentIndex ? "active" : ""}
-              onClick={() => setCurrentIndex(index)}
+              className={idx === currentIndex ? "active" : ""}
+              onClick={() => changeSlide(idx)}
             ></span>
           ))}
         </div>
 
         <i
           className="pe-7s-angle-right btn-rght btn-angle"
-          onClick={rightClick}
+          onClick={() => changeSlide((currentIndex + 1) % slider.length)}
         ></i>
       </div>
     </section>
   );
 }
+
 export default Slider;
