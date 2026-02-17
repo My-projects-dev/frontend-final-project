@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import datas from "../../../Datas";
-import SliderTopImg from "../../../assets/img/slider/slider-top-img.webp";
-import SliderBottomImg from "../../../assets/img/slider/slider-bottom-img.webp";
+import datas from "../../Datas";
+import SliderTopImg from "../../assets/img/slider/slider-top-img.webp";
+import SliderBottomImg from "../../assets/img/slider/slider-bottom-img.webp";
 
 const { slider } = datas;
 
@@ -11,6 +11,7 @@ function Slider() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setVisible(true);
     const interval = setInterval(() => {
       changeSlide((currentIndex + 1) % slider.length);
     }, 7000);

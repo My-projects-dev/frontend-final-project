@@ -1,10 +1,12 @@
-import Slider from "../components/home/slider/Slider";
+import Features from "../components/home/Features";
+import Slider from "../components/home/Slider";
 
 function HomePage() {
   return (
-    <main>
+    <>
       <Slider />
-    </main>
+      <Features />
+    </>
   );
 }
 

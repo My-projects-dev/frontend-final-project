@@ -65,6 +65,7 @@ section.slider_section .slider_area {
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index: 1;
 
     &__data_area,
     &__img_area {
@@ -111,7 +112,7 @@ section.slider_section .slider_area {
     &__img_area img {
       max-width: 555px;
       opacity: 0;
-      transform: scale(1.05);
+      // transform: scale(1.05);
       transition:
         opacity 0.6s ease,
         transform 0.6s ease;
@@ -119,7 +120,7 @@ section.slider_section .slider_area {
 
     &__img_area.fade-in img {
       opacity: 1;
-      transform: scale(1);
+      // transform: scale(1);
     }
 
     a {

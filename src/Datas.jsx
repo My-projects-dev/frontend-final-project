@@ -209,6 +209,27 @@ const slider = [
   },
 ];
 
+const features = [
+  {
+    id: 1,
+    title: "Free Shipping",
+    description: "Free Home Delivery Offer",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/shipping/icon/plane.png",
+  },
+  {
+    id: 2,
+    title: "Online Support",
+    description: "24/7 Online Support Provide",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/shipping/icon/earphones.png",
+  },
+  {
+    id: 3,
+    title: "Secure Payment",
+    description: "Fully Secure Payment System",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/shipping/icon/shield.png",
+  },
+];
+
 export default {
   languages,
   currency,
@@ -216,4 +237,5 @@ export default {
   delivery_price,
   products,
   slider,
+  features,
 };

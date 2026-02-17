@@ -1,0 +1,28 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+section.features_section {
+  @include mixins.grid($size: 330px);
+  padding: 100px 8%;
+  .feature {
+    @include mixins.flex($direction: row, $gap: 20px, $justify: flex-start);
+    border: 2px solid variables.$primary-color;
+    padding: 30px;
+    position: relative;
+
+    &__border {
+      height: 50%;
+      width: 4px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: -3px;
+      transform: translateY(-50%);
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  }
+}
