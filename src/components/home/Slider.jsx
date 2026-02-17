@@ -71,6 +71,7 @@ function Slider() {
         <div className="dot_area">
           {slider.map((_, idx) => (
             <span
+              key={idx}
               className={idx === currentIndex ? "active" : ""}
               onClick={() => changeSlide(idx)}
             ></span>

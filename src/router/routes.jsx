@@ -7,6 +7,8 @@ import ContactPage from "../pages/ContactPage";
 import LikePage from "../pages/LikePage";
 import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
+import ComparePage from "../pages/ComparePage";
+import SingleProductPage from "../pages/SingleProductPage";
 import NotFound from "../pages/NotFound";
 
 const routes = [
@@ -19,6 +21,12 @@ const routes = [
   { path: "/like", element: <LikePage />, title: "Like" },
   { path: "/cart", element: <CartPage />, title: "Cart" },
   { path: "/checkout", element: <CheckoutPage />, title: "Checkout" },
+  { path: "/compare", element: <ComparePage />, title: "Compare" },
+  {
+    path: "/product/:id",
+    element: <SingleProductPage />,
+    title: "SingleProduct",
+  },
   { path: "*", element: <NotFound />, title: "404" },
 ];
 export default routes;
