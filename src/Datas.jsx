@@ -230,6 +230,27 @@ const features = [
   },
 ];
 
+const offers = [
+  {
+    id: 1,
+    discoun: "-10% Off",
+    title: "Bell Pepper Orange",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/banner/1-1-370x250.jpg",
+  },
+  {
+    id: 2,
+    discoun: "-20% Off",
+    title: "Fruit Juice Package",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/banner/1-2-370x250.jpg",
+  },
+  {
+    id: 3,
+    discoun: "-30% Off",
+    title: "Full Fresh Vegetable",
+    img: "https://template.hasthemes.com/harmic/harmic/assets/images/banner/1-3-370x250.jpg",
+  },
+];
+
 export default {
   languages,
   currency,
@@ -238,4 +259,5 @@ export default {
   products,
   slider,
   features,
+  offers,
 };

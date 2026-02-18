@@ -1,0 +1,54 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+section.offer_section {
+  @include mixins.flex($direction: row, $gap: 30px, $justify: flex-start);
+  flex-wrap: wrap;
+  padding: 100px 8%;
+}
+
+.offer {
+  position: relative;
+  width: calc((100% - 60px) / 3);
+  height: 250px;
+
+  &__content {
+    @include mixins.flex($justify: space-around, $align: flex-start);
+    height: 100%;
+    padding: 30px;
+    width: 50%;
+
+    position: absolute;
+
+    span {
+      color: red;
+    }
+
+    a {
+      color: #fff;
+      background-color: variables.$primary-color;
+      padding: 10px 20px;
+    }
+
+    a:hover {
+      color: inherit;
+      background-color: #fff;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  section.offer_section .offer {
+    width: calc((100% - 30px) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  section.offer_section {
+    padding-inline: 5%;
+
+    .offer {
+      width: 100%;
+    }
+  }
+}

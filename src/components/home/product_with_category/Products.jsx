@@ -13,17 +13,17 @@ function Products({ products }) {
               <ul>
                 <li>
                   <Link to="/cart">
-                    <i class="pe-7s-cart"></i>
+                    <i className="pe-7s-cart"></i>
                   </Link>
                 </li>
                 <li>
                   <Link to="/compare">
-                    <i class="pe-7s-shuffle"></i>
+                    <i className="pe-7s-shuffle"></i>
                   </Link>
                 </li>
                 <li>
                   <Link to="/wishlist">
-                    <i class="pe-7s-like"></i>
+                    <i className="pe-7s-like"></i>
                   </Link>
                 </li>
               </ul>
@@ -39,8 +39,8 @@ function Products({ products }) {
             <p className="product__data_container__price">{product.price}</p>
             <ul>
               {[...Array(product.rating)].map((_, i) => (
-                <li>
-                  <i key={i} className="pe-7s-star star"></i>
+                <li key={i}>
+                  <i className="pe-7s-star star"></i>
                 </li>
               ))}
             </ul>
