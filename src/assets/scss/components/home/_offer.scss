@@ -11,17 +11,28 @@ section.offer_section {
   position: relative;
   width: calc((100% - 60px) / 3);
   height: 250px;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05) rotate(1deg);
+  }
 
   &__content {
     @include mixins.flex($justify: space-around, $align: flex-start);
     height: 100%;
     padding: 30px;
     width: 50%;
+    z-index: 1;
 
     position: absolute;
 
     span {
       color: red;
+      @include mixins.font(700);
     }
 
     a {

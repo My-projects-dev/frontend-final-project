@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 import HomePage from "../pages/HomePage";
 import ShopPage from "../pages/ShopPage";
 import WishListPage from "../pages/WishListPage";
@@ -13,7 +15,7 @@ import NotFound from "../pages/NotFound";
 
 const routes = [
   { path: "/", element: <HomePage />, title: "Home" },
-  { path: "/shop", element: <ShopPage />, title: "Shop" },
+  { path: "/shop", element: <Navigate to="/shop/1" replace />, title: "Shop" },
   { path: "/wishlist", element: <WishListPage />, title: "WishList" },
   { path: "/contact", element: <ContactPage />, title: "Contact" },
   { path: "/login", element: <LoginPage />, title: "Login" },
@@ -21,6 +23,7 @@ const routes = [
   { path: "/like", element: <LikePage />, title: "Like" },
   { path: "/cart", element: <CartPage />, title: "Cart" },
   { path: "/checkout", element: <CheckoutPage />, title: "Checkout" },
+  { path: "/shop/:page", element: <ShopPage />, title: "Shop" },
   { path: "/compare", element: <ComparePage />, title: "Compare" },
   {
     path: "/product/:id",

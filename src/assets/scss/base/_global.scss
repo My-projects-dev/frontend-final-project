@@ -5,3 +5,11 @@
   background: variables.$primary-color;
   color: #fff;
 }
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: variables.$primary-color;
+}

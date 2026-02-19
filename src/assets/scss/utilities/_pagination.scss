@@ -1,0 +1,30 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.pagination ul {
+  @include mixins.flex($direction: row);
+
+  li {
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    @include mixins.flex($direction: row);
+    cursor: pointer;
+
+    &.active,
+    &:hover {
+      background-color: variables.$primary-color;
+      color: #fff;
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}

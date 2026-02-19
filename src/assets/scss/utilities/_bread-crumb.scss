@@ -1,0 +1,24 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.bread-crump {
+  @include mixins.flex($gap: 15px);
+  background-image: url("../../img/bread-crumb-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 373px;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  ul {
+    @include mixins.flex($direction: row);
+
+    li {
+      @include mixins.flex($direction: row, $gap: 0);
+    }
+  }
+}

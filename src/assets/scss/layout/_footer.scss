@@ -1,0 +1,17 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+footer .footer_bottom {
+  background-color: variables.$primary-color;
+  color: #fff;
+  padding: 18px 0;
+  text-align: center;
+
+  .heart_icon {
+    color: #dc3545;
+  }
+}
+
+footer .footer_top {
+  background-color: #e5ddcc;
+}

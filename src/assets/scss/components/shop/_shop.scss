@@ -1,0 +1,13 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.shop_container {
+  padding: 100px 8%;
+  @include mixins.flex($justify: space-around, $gap: 50px);
+}
+
+@media (max-width: 575px) {
+  .shop_container {
+    padding-inline: 5%;
+  }
+}

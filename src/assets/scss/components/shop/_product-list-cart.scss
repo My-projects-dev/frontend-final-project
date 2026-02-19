@@ -1,0 +1,92 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.product_list_cart {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  transition: box-shadow 0.3s ease-in-out;
+  color: #444444;
+
+  &:hover {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+
+  &__data_container {
+    @include mixins.flex($gap: 20px, $align: flex-start);
+    padding: 30px;
+
+    &__title {
+      color: inherit;
+      font-size: 1.2rem;
+    }
+
+    &__title:hover {
+      color: variables.$primary-color;
+    }
+  }
+
+  ul {
+    @include mixins.flex($direction: row, $gap: 5px);
+  }
+  .star {
+    color: orange;
+  }
+
+  &:hover img {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  &:hover .product_list_cart__img_container__shopping {
+    transform: translateY(-65px);
+  }
+}
+
+.product_list_cart__img_container {
+  position: relative;
+  overflow: hidden;
+  width: 550px;
+  height: 300px;
+  background-color: #f3f3f3;
+
+  img {
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &__shopping {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.product_list_cart__img_container__shopping ul {
+  @include mixins.flex($direction: row, $gap: 5px);
+
+  li a {
+    background-color: #fff;
+    color: inherit;
+    font-size: 20px;
+    padding: 12px;
+
+    &:hover {
+      background-color: variables.$primary-color;
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .product_list_cart {
+    @include mixins.flex($gap: 0px);
+    height: auto;
+  }
+
+  .product_list_cart__img_container {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.product_topbar {
+  @include mixins.flex($direction: row, $justify: space-between);
+  border: variables.$secondary-opocity-border;
+  width: 100%;
+  padding: 20px 10px;
+
+  .table-icon {
+    margin-inline: 15px;
+  }
+
+  .table-icon,
+  .list-icon {
+    &.active,
+    &:hover {
+      color: variables.$primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__found span {
+    color: variables.$primary-color;
+  }
+
+  &__dropdown {
+    width: 160px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product_topbar {
+    @include mixins.flex();
+  }
+}

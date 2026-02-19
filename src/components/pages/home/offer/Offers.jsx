@@ -1,4 +1,4 @@
-import datas from "../../../Datas";
+import datas from "../../../../Datas";
 import Offer from "./Offer";
 
 const { offers } = datas;

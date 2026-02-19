@@ -1,7 +1,7 @@
-import Features from "../components/home/feature/Features";
-import Offers from "../components/home/offer/Offers";
-import ProductCategory from "../components/home/product_with_category/ProductCategory";
-import Slider from "../components/home/Slider";
+import Features from "../components/pages/home/feature/Features";
+import Offers from "../components/pages/home/offer/Offers";
+import ProductCategory from "../components/pages/home/product_with_category/ProductCategory";
+import Slider from "../components/pages/home/Slider";
 
 function HomePage() {
   return (

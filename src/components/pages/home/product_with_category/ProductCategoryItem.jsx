@@ -1,4 +1,4 @@
-import All from "../../../assets/img/all-category-img.webp";
+import All from "../../../../assets/img/all-category-img.webp";
 
 function ProductCategoryItem({
   img = All,

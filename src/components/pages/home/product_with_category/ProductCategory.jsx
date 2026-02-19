@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProductCategoryItem from "./ProductCategoryItem";
-import Products from "./Products";
-import datas from "../../../Datas";
+import Products from "../../shop/Products";
+import datas from "../../../../Datas";
 
 const { products } = datas;
 
@@ -43,7 +43,7 @@ function ProductCategory() {
           />
         ))}
       </div>
-      <Products products={selectedProduct} />
+      <Products products={selectedProduct.slice(0, 8)} />
     </section>
   );
 }

@@ -9,6 +9,8 @@
 // utilities
 @use "./utilities/dropdown";
 @use "./utilities/button";
+@use "./utilities/bread-crumb";
+@use "./utilities/pagination";
 
 // component
 @use "./components/header/toggle-menu";
@@ -23,6 +25,11 @@
 @use "./components/home/features";
 @use "./components/home/product-category";
 @use "./components/home/offer";
+
+@use "./components/shop/shop";
+@use "./components/shop/product-topbar";
+@use "./components/shop/product";
+@use "./components/shop/product-list-cart";
 
 // layout
 @use "./layout/header";
