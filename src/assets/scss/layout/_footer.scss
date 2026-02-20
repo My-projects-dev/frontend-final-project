@@ -14,4 +14,84 @@ footer .footer_bottom {
 
 footer .footer_top {
   background-color: #e5ddcc;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 100px;
+  padding: 90px 8%;
+
+  .line {
+    width: 50px;
+    height: 2px;
+    background-color: variables.$primary-color;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+
+  ul {
+    @include mixins.flex($gap: 15px, $justify: flex-start, $align: flex-start);
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  &__about {
+    &__logo {
+      width: 160px;
+      margin-bottom: 20px;
+    }
+
+    &__contact {
+      @include mixins.flex(
+        $direction: row,
+        $justify: flex-start,
+        $align: center
+      );
+      margin-top: 10px;
+    }
+
+    .pe-7s-map-marker,
+    .pe-7s-mail {
+      font-size: 23px;
+    }
+
+    &__payment_methods {
+      margin-top: 40px;
+    }
+  }
+
+  &__newsletters {
+    input {
+      border: none;
+      width: 100%;
+      padding: 17px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      background-color: #f0ece5;
+    }
+
+    button {
+      background-color: variables.$primary-color;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+    }
+
+    button:hover {
+      background-color: black;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer .footer_top {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 50px 5%;
+  }
 }

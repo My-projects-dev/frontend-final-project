@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Img from "/dark.webp";
 
-function SiteIcon() {
+function SiteIcon({ className = "" }) {
   return (
     <Link to="/">
-      <figure>
+      <figure className={className}>
         <img src={Img} alt="Harmic" />
       </figure>
     </Link>

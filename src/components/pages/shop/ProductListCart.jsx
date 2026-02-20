@@ -45,7 +45,7 @@ function ProductListCart({ product }) {
           ))}
         </ul>
         <p className="product_list_cart__data_container__description">
-          ${product?.description}
+          {product?.description}
         </p>
       </div>
     </div>
