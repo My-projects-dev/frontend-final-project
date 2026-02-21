@@ -20,11 +20,10 @@ section.slider_section .slider_area {
     position: absolute;
     font-size: 3rem;
     top: 50%;
-    cursor: pointer;
     transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
-    z-index: 1;
+    z-index: 2;
 
     transition:
       opacity 0.3s ease,
@@ -34,6 +33,7 @@ section.slider_section .slider_area {
     &:hover {
       background-color: variables.$primary-color;
       color: #fff;
+      cursor: pointer;
     }
   }
 

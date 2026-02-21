@@ -27,7 +27,7 @@
       @include mixins.flex($direction: row, $gap: 5px);
     }
     .star {
-      color: orange;
+      color: variables.$star-color;
     }
 
     &:hover img {

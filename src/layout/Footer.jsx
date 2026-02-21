@@ -82,9 +82,10 @@ function Footer() {
             tempor.
           </p>
           <div>
-            <form action=""></form>
-            <input type="mail" placeholder="Your Email" />
-            <button type="submit">SEND MAIL</button>
+            <form action="">
+              <input type="mail" placeholder="Your Email" />
+              <button type="submit">SEND MAIL</button>
+            </form>
           </div>
         </div>
       </div>

@@ -4,9 +4,11 @@ function ProductCart({ product }) {
   return (
     <div className="product">
       <div className="product__img_container">
-        <figure>
-          <img src={product?.images[0]} alt={product?.productName} />
-        </figure>
+        <Link to={`/product/${product?.id}`}>
+          <figure>
+            <img src={product?.images[0]} alt={product?.productName} />
+          </figure>
+        </Link>
         <div className="product__img_container__shopping">
           <ul>
             <li>

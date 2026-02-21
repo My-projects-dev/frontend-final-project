@@ -4,7 +4,6 @@ import Pagination from "../../common/Pagination";
 import Products from "./Products";
 import datas from "../../../Datas";
 import ProductTopbar from "./ProductTopbar";
-import ProductListCart from "./ProductListCart";
 
 const { products } = datas;
 

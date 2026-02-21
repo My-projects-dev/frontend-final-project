@@ -50,9 +50,11 @@ footer .footer_top {
       @include mixins.flex(
         $direction: row,
         $justify: flex-start,
-        $align: center
+        $align: center,
+        $gap: 5px
       );
       margin-top: 10px;
+      font-size: 14px;
     }
 
     .pe-7s-map-marker,
@@ -85,6 +87,13 @@ footer .footer_top {
     button:hover {
       background-color: black;
     }
+  }
+}
+
+@media (max-width: 950px) {
+  footer .footer_top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
   }
 }
 

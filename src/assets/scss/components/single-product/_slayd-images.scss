@@ -1,0 +1,31 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.slayd-images {
+  @include mixins.flex($justify: space-between, $direction: row);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 55, 55, 0.9);
+  z-index: 111;
+  color: #bbbbbb;
+
+  .left,
+  .right {
+    font-size: 40px;
+  }
+
+  .left:hover,
+  .right:hover {
+    color: #fff;
+  }
+
+  &__img_are {
+    @include mixins.flex($align: flex-end);
+
+    figure {
+      height: 85vh;
+    }
+  }
+}

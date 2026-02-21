@@ -1,0 +1,26 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.number-input {
+  background-color: #f6f6f6;
+  height: 100%;
+  width: 80px;
+  display: flex;
+  outline: none;
+  align-items: center;
+  padding: 10px;
+
+  input {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding-inline: 5px;
+    text-align: center;
+  }
+  input:focus {
+    border: none;
+    outline: none;
+  }
+}

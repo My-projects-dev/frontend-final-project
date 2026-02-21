@@ -11,6 +11,7 @@
 @use "./utilities/button";
 @use "./utilities/bread-crumb";
 @use "./utilities/pagination";
+@use "./utilities/input-number";
 
 // component
 @use "./components/header/toggle-menu";
@@ -30,6 +31,9 @@
 @use "./components/shop/product-topbar";
 @use "./components/shop/product";
 @use "./components/shop/product-list-cart";
+
+@use "./components/single-product/single-product";
+@use "./components/single-product/slayd-images";
 
 // layout
 @use "./layout/header";

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faTh } from "@fortawesome/free-solid-svg-icons";
+import { faGrip, faList } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "../../common/Dropdown";
 
 const optionsData = [
@@ -22,7 +22,7 @@ function ProductTopbar({
     <div className="product_topbar">
       <div className="product_topbar__icons">
         <FontAwesomeIcon
-          icon={faTh}
+          icon={faGrip}
           className={`table-icon ${grid ? "active" : ""}`}
           onClick={() => cellType(true)}
         />
