@@ -56,7 +56,7 @@
   &__shopping {
     width: 100%;
     position: absolute;
-    bottom: -40px;
+    bottom: -50px;
     transition: transform 0.3s ease-in-out;
   }
 }
@@ -64,15 +64,24 @@
 .product__img_container__shopping ul {
   @include mixins.flex($direction: row, $gap: 5px);
 
-  li a {
+  li a,
+  li .pe-7s-like {
     background-color: #fff;
     color: inherit;
     font-size: 20px;
     padding: 12px;
+    cursor: pointer;
 
     &:hover {
       background-color: variables.$primary-color;
       color: #fff;
+    }
+  }
+  li .liked {
+    color: red;
+
+    &:hover {
+      color: red;
     }
   }
 }

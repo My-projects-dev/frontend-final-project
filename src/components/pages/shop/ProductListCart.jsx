@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../../../store/wishlistSlice";
 
 function ProductListCart({ product }) {
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist.items);
+
+  const isLiked = wishlist.some((item) => item.id === product.id);
+
+  const handleWishlist = () => {
+    if (isLiked) {
+      dispatch(removeFromWishlist(product.id));
+    } else {
+      dispatch(addToWishlist(product));
+    }
+  };
   return (
     <div className="product_list_cart">
       <div className="product_list_cart__img_container">
@@ -20,9 +37,10 @@ function ProductListCart({ product }) {
               </Link>
             </li>
             <li>
-              <Link to="/wishlist">
-                <i className="pe-7s-like"></i>
-              </Link>
+              <i
+                className={`pe-7s-like ${isLiked ? "liked" : ""}`}
+                onClick={handleWishlist}
+              ></i>
             </li>
           </ul>
         </div>

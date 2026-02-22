@@ -97,9 +97,15 @@
 
   &__images {
     @include mixins.flex($direction: row, $gap: 30px, $justify: flex-start);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 
     figure {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+
       width: 90px;
       height: 110px;
       background-color: #f3f3f3;
@@ -111,7 +117,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .product_wrapper {
     flex-direction: column;
     padding: 20px 5%;
@@ -139,19 +145,6 @@
     a {
       width: 100%;
       text-align: center;
-    }
-  }
-
-  .product_datas .product_datas__images {
-    width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-
-    figure {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      scroll-snap-align: end;
     }
   }
 }
