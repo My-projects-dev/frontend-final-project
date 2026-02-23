@@ -24,29 +24,36 @@
       margin: 0 auto;
     }
 
-    td button {
+    td .button {
       color: #fff;
       background-color: black;
       border: none;
       padding: 10px 20px;
     }
 
-    td button:hover {
+    td .button:hover {
       background-color: variables.$primary-color;
     }
 
     td.out_stock {
       color: variables.$red-color;
     }
+
+    td .delete {
+      cursor: pointer;
+    }
   }
 }
 
 @media (max-width: 767px) {
-  .wishlist table thead {
-    display: none;
-  }
+  .wishlist {
+    padding: 100px 5%;
+    table thead {
+      display: none;
+    }
 
-  .wishlist table tbody td {
-    @include mixins.flex($gap: 0px);
+    table tbody td {
+      @include mixins.flex($gap: 0);
+    }
   }
 }

@@ -1,23 +1,30 @@
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function InputNumber() {
-  const [inputValue, setInputValue] = useState(1);
-
-  function decreament() {
-    if (inputValue > 1) {
-      setInputValue(inputValue - 1);
-    }
-  }
+function InputNumber({ value = 1, onChange }) {
+  const handleChange = (val) => {
+    if (val < 1) val = 1;
+    onChange(val);
+  };
 
   return (
     <div className="number-input">
-      <FontAwesomeIcon icon={faMinus} onClick={decreament} size="xs" />
-      <input type="text" min="1" className="quantity" value={inputValue} />
+      <FontAwesomeIcon
+        icon={faMinus}
+        onClick={() => handleChange(value - 1)}
+        size="xs"
+      />
+
+      <input
+        min="1"
+        className="quantity"
+        value={value}
+        onChange={(e) => handleChange(parseInt(e.target.value) || 1)}
+      />
+
       <FontAwesomeIcon
         icon={faPlus}
-        onClick={() => setInputValue(inputValue + 1)}
+        onClick={() => handleChange(value + 1)}
         size="xs"
       />
     </div>

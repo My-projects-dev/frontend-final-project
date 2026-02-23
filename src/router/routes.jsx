@@ -15,7 +15,7 @@ import NotFound from "../pages/NotFound";
 
 const routes = [
   { path: "/", element: <HomePage />, title: "Home" },
-  { path: "/shop", element: <Navigate to="/shop/1" replace />, title: "Shop" },
+  { path: "/shop/1", element: <ShopPage />, title: "Shop" },
   { path: "/wishlist", element: <WishListPage />, title: "WishList" },
   { path: "/contact", element: <ContactPage />, title: "Contact" },
   { path: "/login", element: <LoginPage />, title: "Login" },

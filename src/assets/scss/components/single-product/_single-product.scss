@@ -77,6 +77,14 @@
       transition: background-color 0.3s ease;
       color: white;
     }
+
+    .liked {
+      color: red;
+
+      &:hover {
+        color: red;
+      }
+    }
   }
 
   &__Categories {

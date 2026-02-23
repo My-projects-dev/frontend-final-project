@@ -4,6 +4,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../store/wishlistSlice";
+import { addToCart } from "../../../store/cartSlice";
 
 function ProductListCart({ product }) {
   const dispatch = useDispatch();
@@ -27,7 +28,23 @@ function ProductListCart({ product }) {
         <div className="product_list_cart__img_container__shopping">
           <ul>
             <li>
-              <Link to="/cart">
+              <Link
+                to="/cart"
+                onClick={(e) => {
+                  if (product.stock === "Out Stock") {
+                    e.preventDefault();
+                    alert("This product is out of stock!");
+                    return;
+                  }
+
+                  dispatch(
+                    addToCart({
+                      id: product.id,
+                      quantity: 1,
+                    }),
+                  );
+                }}
+              >
                 <i className="pe-7s-cart"></i>
               </Link>
             </li>

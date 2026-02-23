@@ -11,10 +11,18 @@ import {
 import { useState } from "react";
 import SlideImages from "./SlideImages";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../../../store/wishlistSlice";
+import { addToCart } from "../../../store/cartSlice";
+
 const { products } = datas;
 
 function Product() {
   const [imageIndex, setImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
 
   const { id } = useParams();
@@ -23,6 +31,19 @@ function Product() {
   const product = products.find(function (item) {
     return item.id == currentPage;
   });
+
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist.items);
+
+  const isLiked = wishlist.some((item) => item.id === product.id);
+
+  const handleWishlist = () => {
+    if (isLiked) {
+      dispatch(removeFromWishlist(product.id));
+    } else {
+      dispatch(addToWishlist(product));
+    }
+  };
 
   return (
     <div className="product_wrapper">
@@ -55,9 +76,30 @@ function Product() {
           </div>
           <p className="product_datas__description">{product?.description}</p>
           <div className="product_datas__shopping_area">
-            <InputNumber />
-            <Link to="/cart">ADD TO CART</Link>
-            <i className="pe-7s-like"></i>
+            <InputNumber value={quantity} onChange={setQuantity} />
+            <Link
+              to="/cart"
+              onClick={(e) => {
+                if (product && product.stock === "Out Stock") {
+                  e.preventDefault();
+                  alert("This product is out of stock!");
+                  return;
+                }
+
+                dispatch(
+                  addToCart({
+                    id: product?.id,
+                    quantity: 1,
+                  }),
+                );
+              }}
+            >
+              ADD TO CART
+            </Link>
+            <i
+              className={`pe-7s-like ${isLiked ? "liked" : ""}`}
+              onClick={handleWishlist}
+            ></i>
           </div>
           <p className="product_datas__Categories">
             Categories :{product?.category}

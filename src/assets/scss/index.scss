@@ -35,10 +35,13 @@
 @use "./components/single-product/single-product";
 @use "./components/single-product/slayd-images";
 
+@use "./components/wishlist";
+
+@use "./components/cart";
+
 // layout
 @use "./layout/header";
 @use "./layout/footer";
 
 // pages
 @use "./pages/not-found";
-@use "./pages/wishlist";
