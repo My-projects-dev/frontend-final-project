@@ -26,6 +26,10 @@
 
   &__dropdown {
     width: 160px;
+
+    & + ul > li {
+      padding: 10px;
+    }
   }
 }
 

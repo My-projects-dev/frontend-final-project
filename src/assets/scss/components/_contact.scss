@@ -1,0 +1,64 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.contact-page {
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.contact-page .message_wrp {
+  @include mixins.flex($align: flex-start, $gap: 30px);
+  background-color: #fff;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 40px;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+
+  .line {
+    width: 100px;
+    height: 2px;
+    background-color: variables.$primary-color;
+  }
+
+  form {
+    @include mixins.flex($align: flex-start, $gap: 25px);
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    border: variables.$secondary-opocity-border;
+    outline: none;
+    padding: 15px;
+  }
+
+  textarea {
+    @extend input;
+    resize: vertical;
+  }
+
+  button {
+    background-color: variables.$primary-color;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-page {
+    padding-bottom: 100px;
+
+    .message_wrp {
+      position: static;
+      width: 100%;
+      margin: 5%;
+    }
+  }
+}
