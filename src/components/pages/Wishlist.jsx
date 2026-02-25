@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../store/cartSlice";
+import { toast } from "react-toastify";
 
 function Wishlist() {
   const wishlist = useSelector((state) => state.wishlist.items);
@@ -54,16 +55,18 @@ function Wishlist() {
                   onClick={(e) => {
                     if (item.stock === "Out Stock") {
                       e.preventDefault();
-                      alert("This product is out of stock!");
+                      toast.error("This product is out of stock!");
                       return;
                     }
 
                     dispatch(
                       addToCart({
-                        id: product.id,
+                        id: item.id,
                         quantity: 1,
                       }),
                     );
+
+                    toast.success("Product added to cart!");
                   }}
                 >
                   ADD TO CART

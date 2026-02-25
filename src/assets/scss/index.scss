@@ -12,6 +12,8 @@
 @use "./utilities/bread-crumb";
 @use "./utilities/pagination";
 @use "./utilities/input-number";
+@use "./utilities/collapse";
+@use "./utilities/coupon";
 
 // component
 @use "./components/header/toggle-menu";
@@ -38,6 +40,12 @@
 @use "./components/wishlist";
 
 @use "./components/cart";
+
+@use "./components/checkout/checkout";
+@use "./components/checkout/checkout-top";
+@use "./components/checkout/raiting-toggle-content";
+@use "./components/checkout/order";
+@use "./components/checkout/billing";
 
 // layout
 @use "./layout/header";

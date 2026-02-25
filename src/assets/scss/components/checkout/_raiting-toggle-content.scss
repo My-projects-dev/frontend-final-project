@@ -1,0 +1,35 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.raiting_toggle {
+  padding-top: 30px;
+
+  &__content {
+    @include mixins.flex($align: flex-start, $gap: 15px);
+    border: variables.$secondary-opocity-border;
+    padding: 20px;
+    font-size: 18px;
+
+    &__username,
+    &__password {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    input:not([type="checkbox"]) {
+      border: variables.$secondary-opocity-border;
+      width: 350px;
+      height: 35px;
+    }
+
+    span {
+      color: variables.$red-color;
+    }
+
+    &__checkbox_container {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}

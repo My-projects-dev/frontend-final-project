@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import InputNumber from "../../common/InputNumber";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import Coupon from "../../common/Coupon";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -79,11 +80,22 @@ function Cart() {
           </tbody>
         </table>
       </div>
+
+      <Coupon />
       <div className="cart_total_area">
         <h2>Cart totals</h2>
+
         <div className="total_price_container">
-          <p>Total</p>
-          <p>${totalPrice.toFixed(2)}</p>
+          <ul>
+            <li>
+              <p>Subtotal</p>
+              <p>${totalPrice.toFixed(2)}</p>
+            </li>
+            <li>
+              <p>Total</p>
+              <p>${totalPrice.toFixed(2)}</p>
+            </li>
+          </ul>
         </div>
         <Link to="/checkout">Proceed To Checkout</Link>
       </div>

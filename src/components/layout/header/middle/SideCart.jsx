@@ -35,7 +35,7 @@ function SideCart({ open, onClose }) {
               return (
                 <li key={item.id}>
                   <div className="product">
-                    <Link to="/">
+                    <Link to={`/product/${product?.id}`} onClick={onClose}>
                       <figure>
                         <img
                           src={product.images[0]}
@@ -45,7 +45,7 @@ function SideCart({ open, onClose }) {
                     </Link>
 
                     <div>
-                      <Link to="/">
+                      <Link to={`/product/${product?.id}`} onClick={onClose}>
                         <h4>{product.productName}</h4>
                       </Link>
                       <p>
@@ -65,7 +65,7 @@ function SideCart({ open, onClose }) {
         </div>
 
         <div className="toggle_shopping_total">
-          <span>Total</span>
+          <span>Subtotal</span>
           <span className="toggle_shopping_total__price">${totalPrice}</span>
         </div>
 

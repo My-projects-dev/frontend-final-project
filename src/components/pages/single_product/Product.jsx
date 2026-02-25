@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { Link, useParams } from "react-router-dom";
 import datas from "../../../Datas";
 import InputNumber from "../../common/InputNumber";
@@ -40,8 +41,10 @@ function Product() {
   const handleWishlist = () => {
     if (isLiked) {
       dispatch(removeFromWishlist(product.id));
+      toast.warning("Product removed from wishlist");
     } else {
       dispatch(addToWishlist(product));
+      toast.success("Product added to wishlist");
     }
   };
 
@@ -82,7 +85,7 @@ function Product() {
               onClick={(e) => {
                 if (product && product.stock === "Out Stock") {
                   e.preventDefault();
-                  alert("This product is out of stock!");
+                  toast.error("This product is out of stock!");
                   return;
                 }
 
@@ -92,6 +95,7 @@ function Product() {
                     quantity: 1,
                   }),
                 );
+                toast.success("Product added to cart!");
               }}
             >
               ADD TO CART

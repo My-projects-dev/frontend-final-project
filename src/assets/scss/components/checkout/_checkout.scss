@@ -1,0 +1,31 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.checkout_container {
+  padding: 100px 8%;
+
+  .checkout_wrapper {
+    display: flex;
+    gap: 20px;
+
+    .billing_area,
+    .order_area {
+      flex-basis: 50%;
+    }
+  }
+
+  .collapse_area {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .checkout_container {
+    padding: 100px 5%;
+
+    .checkout_wrapper {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.billing_area {
+  h2 {
+    border-bottom: variables.$secondary-opocity-border;
+    padding-bottom: 10px;
+  }
+
+  .billing_details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 30px 0;
+  }
+  .country {
+    width: 100%;
+    border: variables.$secondary-opocity-border;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    & + ul {
+      width: 100%;
+    }
+
+    & + ul li {
+      font-size: inherit;
+      margin-bottom: 10px;
+    }
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    margin-top: 10px;
+    border: variables.$secondary-opocity-border;
+  }
+
+  .fullname,
+  .state_area,
+  .email_area {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .first_name_container,
+  .last_name_container,
+  .state_container,
+  .zip_container,
+  .email_container,
+  .phone_container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  .create_account .checkbox_area,
+  .ship_checkbox_wrp {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    input {
+      width: inherit;
+      margin: 0;
+    }
+  }
+
+  .ship_checkbox_wrp {
+    padding: 10px 0;
+    margin-top: 10px;
+    border-bottom: variables.$secondary-opocity-border;
+
+    label {
+      @include mixins.font(700, 1.5rem);
+    }
+  }
+  .create_account__child_content p {
+    margin: 20px 0;
+  }
+
+  .order_notes_container {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      @extend input;
+      resize: vertical;
+    }
+  }
+}

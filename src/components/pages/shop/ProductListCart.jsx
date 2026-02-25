@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,8 +16,10 @@ function ProductListCart({ product }) {
   const handleWishlist = () => {
     if (isLiked) {
       dispatch(removeFromWishlist(product.id));
+      toast.warning("Product removed from wishlist");
     } else {
       dispatch(addToWishlist(product));
+      toast.success("Product added to wishlist");
     }
   };
   return (
@@ -33,7 +36,7 @@ function ProductListCart({ product }) {
                 onClick={(e) => {
                   if (product.stock === "Out Stock") {
                     e.preventDefault();
-                    alert("This product is out of stock!");
+                    toast.error("This product is out of stock!");
                     return;
                   }
 
@@ -43,6 +46,7 @@ function ProductListCart({ product }) {
                       quantity: 1,
                     }),
                   );
+                  toast.success("Product added to cart!");
                 }}
               >
                 <i className="pe-7s-cart"></i>

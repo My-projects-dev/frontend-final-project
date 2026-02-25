@@ -1,0 +1,32 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.collapse {
+  h3 {
+    cursor: pointer;
+
+    &:hover {
+      color: variables.$primary-color;
+    }
+  }
+
+  .collapse_content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition:
+      grid-template-rows 0.4s ease,
+      opacity 0.3s ease;
+    opacity: 0;
+    overflow: hidden;
+
+    &.open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .inner {
+      min-height: 0;
+      padding: 5px 0;
+    }
+  }
+}

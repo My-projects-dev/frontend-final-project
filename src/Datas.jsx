@@ -11,6 +11,15 @@ const categories = [
   "Product Item 05",
 ];
 
+const country = [
+  "Bangladesh",
+  "London",
+  "Romania",
+  "French",
+  "Germany",
+  "Australia",
+];
+
 var delivery_price = "$200";
 
 const products = [
@@ -421,6 +430,7 @@ const offers = [
 
 export default {
   languages,
+  country,
   currency,
   categories,
   delivery_price,

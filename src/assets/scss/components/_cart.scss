@@ -5,15 +5,16 @@
   padding: 100px 8%;
 
   .cart_total_area {
-    margin-top: 50px;
-
     .total_price_container {
+      margin: 30px 0;
+      width: 400px;
+    }
+
+    .total_price_container ul > li {
       display: flex;
       justify-content: space-between;
       border: 1px solid #dee2e6;
-      padding: 20px 30px;
-      margin: 30px 0;
-      width: 400px;
+      padding: 10px 30px;
       font-weight: 700;
     }
 

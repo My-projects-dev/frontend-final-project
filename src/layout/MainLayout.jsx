@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Outlet } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -12,6 +14,7 @@ function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

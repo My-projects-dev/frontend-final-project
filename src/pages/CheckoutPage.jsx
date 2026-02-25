@@ -1,5 +1,13 @@
+import BreadCrumb from "../components/common/BreadCrumb";
+import Checkout from "../components/pages/checkout/checkout";
+
 function CheckoutPage() {
-  return <div>Checkout</div>;
+  return (
+    <>
+      <BreadCrumb page="Checkout" title="Product Related" />
+      <Checkout />
+    </>
+  );
 }
 
 export default CheckoutPage;
