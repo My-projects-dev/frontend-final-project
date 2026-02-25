@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom";
-
 import HomePage from "../pages/HomePage";
 import ShopPage from "../pages/ShopPage";
 import WishListPage from "../pages/WishListPage";
@@ -24,7 +23,8 @@ const routes = [
   { path: "/cart", element: <CartPage />, title: "Cart" },
   { path: "/checkout", element: <CheckoutPage />, title: "Checkout" },
   { path: "/shop/:page", element: <ShopPage />, title: "Shop" },
-  { path: "/compare", element: <ComparePage />, title: "Compare" },
+  { path: "/shop", element: <Navigate to="/shop/1" replace /> },
+  { path: "/compare/:id", element: <ComparePage />, title: "Compare" },
   {
     path: "/product/:id",
     element: <SingleProductPage />,

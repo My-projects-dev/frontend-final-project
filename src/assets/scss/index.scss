@@ -47,6 +47,8 @@
 @use "./components/checkout/order";
 @use "./components/checkout/billing";
 
+@use "./components/compare";
+
 // layout
 @use "./layout/header";
 @use "./layout/footer";

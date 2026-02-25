@@ -56,7 +56,7 @@ function ProductCart({ product }) {
               </Link>
             </li>
             <li>
-              <Link to="/compare">
+              <Link to={`/compare/${product?.id}`}>
                 <i className="pe-7s-shuffle"></i>
               </Link>
             </li>
