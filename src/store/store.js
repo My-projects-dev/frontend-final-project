@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import wishlistReducer from "./wishlistSlice";
+import searchReducer from "./searchSlice";
 import cartReducer from "./cartSlice";
 
 import {
@@ -36,6 +37,7 @@ export const store = configureStore({
   reducer: {
     wishlist: persistedWishlistReducer,
     cart: persistedCartReducer,
+    search: searchReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

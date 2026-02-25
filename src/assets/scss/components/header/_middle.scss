@@ -46,11 +46,17 @@
       background-color: variables.$primary-color;
     }
 
+    &__search_button:active {
+      background-color: #fff;
+      color: black;
+    }
+
     &__search_input {
       height: 50px;
       font-size: 1rem;
       padding-inline: 10px;
       border: variables.$secondary-opocity-border;
+      outline: none;
       border-radius: 5px;
       flex: 1;
       min-width: 0;

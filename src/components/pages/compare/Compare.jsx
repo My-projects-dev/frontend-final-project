@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../store/cartSlice";
@@ -8,7 +8,6 @@ import NotFound from "../../../pages/NotFound";
 const { products } = datas;
 
 function Compare() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -23,7 +22,9 @@ function Compare() {
   }
 
   function getRandomProductExcept(products, excludedId) {
-    const filtered = products.filter((p) => p.id !== excludedId);
+    const filtered = products.filter(
+      (p) => p.id !== excludedId && p.category == product.category,
+    );
 
     if (!filtered.length) return null;
 

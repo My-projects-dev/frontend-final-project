@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Pagination from "../../common/Pagination";
 import Products from "./Products";
 import datas from "../../../Datas";
@@ -8,8 +9,11 @@ import ProductTopbar from "./ProductTopbar";
 const { products } = datas;
 
 function Shop() {
+  const searchResults = useSelector((state) => state.search.results);
+  const baseProducts = searchResults.length > 0 ? searchResults : products;
+
   const [selected, setSelected] = useState("Sort by Default");
-  const [sortedProduct, setSortedProduct] = useState(products);
+  const [sortedProduct, setSortedProduct] = useState(baseProducts);
   const [grid, setGrid] = useState(true);
 
   const { page } = useParams();
@@ -21,13 +25,17 @@ function Shop() {
   let lastPage = Math.ceil(sortedProduct.length / perPage);
 
   useEffect(() => {
-    let temp = [...products];
+    let temp = [...baseProducts];
 
     switch (selected) {
       case "Sort by Default":
         break;
 
       case "Sort by Rated":
+        temp.sort((a, b) => b.rating - a.rating);
+        break;
+
+      case "Sort by Popularity":
         temp.sort((a, b) => b.rating - a.rating);
         break;
 
@@ -45,7 +53,7 @@ function Shop() {
     }
 
     setSortedProduct(temp);
-  }, [selected]);
+  }, [selected, baseProducts]);
 
   return (
     <div className="shop_container">

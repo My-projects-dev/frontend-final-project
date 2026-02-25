@@ -48,12 +48,12 @@
     }
 
     .img_area {
-      @include mixins.flex();
+      @include mixins.flex($gap: 20px);
       flex-direction: column;
 
       figure {
         width: 100px;
-        margin: 0 auto 30px auto;
+        margin: 0 auto;
       }
 
       a.button {

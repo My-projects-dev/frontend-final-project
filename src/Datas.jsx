@@ -4,11 +4,10 @@ const currency = ["USD", "GPV", "ISO"];
 
 const categories = [
   "All Category",
-  "Product Item",
-  "Product Item 02",
-  "Product Item 03",
-  "Product Item 04",
-  "Product Item 05",
+  "Fresh Fruits",
+  "Vegetable",
+  "Fish & Meat",
+  "Wheat",
 ];
 
 const country = [

@@ -8,6 +8,7 @@
   .product {
     width: calc((100% - 90px) / 4);
     border: 1px solid #f3f3f3;
+    min-width: 260px;
 
     &__data_container {
       @include mixins.flex($gap: 15px);
