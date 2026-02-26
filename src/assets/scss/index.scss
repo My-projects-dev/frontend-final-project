@@ -14,6 +14,7 @@
 @use "./utilities/input-number";
 @use "./utilities/collapse";
 @use "./utilities/coupon";
+@use "./utilities/input-label";
 
 // component
 @use "./components/header/toggle-menu";
@@ -50,6 +51,15 @@
 @use "./components/compare";
 
 @use "./components/contact";
+
+@use "./components/login-register/login-register";
+@use "./components/login-register/login";
+@use "./components/login-register/register";
+
+@use "./components/account/account";
+@use "./components/account/account-details";
+@use "./components/account/addresses";
+@use "./components/account/orders";
 
 // layout
 @use "./layout/header";

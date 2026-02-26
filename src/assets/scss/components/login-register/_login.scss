@@ -1,0 +1,42 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.login_container {
+  width: 100%;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+
+    .form_foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  .form_foot .checkbox_area {
+    display: flex;
+    gap: 10px;
+
+    input[type="checkbox"] {
+      opacity: 0.5;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login_container form .form_foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

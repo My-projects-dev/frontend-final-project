@@ -1,0 +1,31 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.login-register {
+  display: flex;
+  gap: 30px;
+  padding: 100px 8%;
+
+  .login_area,
+  .regisrer_area {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  .login-register {
+    flex-direction: column;
+    gap: 50px;
+
+    .login_area,
+    .regisrer_area {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login-register {
+    padding: 100px 5%;
+  }
+}

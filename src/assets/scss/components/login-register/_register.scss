@@ -1,0 +1,33 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.login_container {
+  width: 100%;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+
+    .password_area,
+    .full_name {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login_container form {
+    .password_area,
+    .full_name {
+      flex-direction: column;
+    }
+  }
+}

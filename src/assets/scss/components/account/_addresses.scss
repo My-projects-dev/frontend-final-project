@@ -1,0 +1,33 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.account_addresses .account_addresses__foot {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+
+  .billing_address,
+  .shippind_address {
+    flex-basis: 50%;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .account_addresses__foot {
+    flex-direction: column;
+
+    .billing_address,
+    .shippind_address {
+      flex-basis: 100%;
+    }
+  }
+}

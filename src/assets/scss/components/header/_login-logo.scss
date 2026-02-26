@@ -14,8 +14,9 @@
     z-index: 1;
     background-color: #fff;
 
-    & > li {
+    & > li a {
       padding: 5px 10px;
+      display: block;
     }
 
     & > li:hover {

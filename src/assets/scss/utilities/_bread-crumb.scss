@@ -15,7 +15,7 @@
   }
 
   ul {
-    @include mixins.flex($direction: row);
+    @include mixins.flex($direction: row, $gap: 2px);
 
     li {
       @include mixins.flex($direction: row, $gap: 0);

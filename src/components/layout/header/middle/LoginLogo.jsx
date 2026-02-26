@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -5,6 +6,8 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function LoginLogo({ className = "", arrow = false }) {
   const [show, setShow] = useState(false);
   const dropdownRef = useRef(null);
+
+  const token = localStorage.getItem("accessToken");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -29,8 +32,15 @@ function LoginLogo({ className = "", arrow = false }) {
 
       {show && (
         <ul>
-          <li>My account</li>
-          <li>Login | Register</li>
+          {token ? (
+            <li>
+              <Link to="/account">My account</Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login-register">Login | Register</Link>
+            </li>
+          )}
         </ul>
       )}
     </div>

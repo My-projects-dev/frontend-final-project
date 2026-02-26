@@ -2,10 +2,9 @@ import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import ShopPage from "../pages/ShopPage";
 import WishListPage from "../pages/WishListPage";
-import LoginPage from "../pages/LoginPage";
-import RegisterPage from "../pages/RegisterPage";
+import LoginRegisterPage from "../pages/LoginRegisterPage";
+import AccountPage from "../pages/AccountPage";
 import ContactPage from "../pages/ContactPage";
-import LikePage from "../pages/LikePage";
 import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
 import ComparePage from "../pages/ComparePage";
@@ -17,9 +16,7 @@ const routes = [
   { path: "/shop/1", element: <ShopPage />, title: "Shop" },
   { path: "/wishlist", element: <WishListPage />, title: "WishList" },
   { path: "/contact", element: <ContactPage />, title: "Contact" },
-  { path: "/login", element: <LoginPage />, title: "Login" },
-  { path: "/register", element: <RegisterPage />, title: "Register" },
-  { path: "/like", element: <LikePage />, title: "Like" },
+  { path: "/account", element: <AccountPage />, title: "Account" },
   { path: "/cart", element: <CartPage />, title: "Cart" },
   { path: "/checkout", element: <CheckoutPage />, title: "Checkout" },
   { path: "/shop/:page", element: <ShopPage />, title: "Shop" },
@@ -29,6 +26,11 @@ const routes = [
     path: "/product/:id",
     element: <SingleProductPage />,
     title: "SingleProduct",
+  },
+  {
+    path: "/login-register",
+    element: <LoginRegisterPage />,
+    title: "Login | Register",
   },
   { path: "*", element: <NotFound />, title: "404" },
 ];

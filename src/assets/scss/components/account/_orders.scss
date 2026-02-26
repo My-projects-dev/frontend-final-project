@@ -1,0 +1,36 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.account_ordes__table_container {
+  width: 100%;
+  margin-top: 15px;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+    td,
+    th {
+      border: 1px solid #dee2e6;
+      padding: 15px;
+    }
+
+    td a {
+      background-color: black;
+      color: wheat;
+      padding: 10px 15px;
+      border-radius: 10px;
+      @include mixins.font(700, 16px);
+    }
+    td a:hover {
+      background-color: variables.$primary-color;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .account_ordes__table_container {
+    overflow-x: auto;
+  }
+}
