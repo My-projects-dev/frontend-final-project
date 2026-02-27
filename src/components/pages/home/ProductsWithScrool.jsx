@@ -22,24 +22,22 @@ function ProductsWithScrool({
         <h3>{subtitle}</h3>
         <h2>{title}</h2>
       </div>
-
       <Swiper
-        modules={navigation ? [Navigation] : []}
+        modules={[Navigation]}
         loop={true}
+        slidesPerView={3}
         spaceBetween={30}
+        navigation={navigation}
         className="mySwiper"
         breakpoints={{
           0: {
             slidesPerView: 1,
-            navigation: false,
           },
           580: {
             slidesPerView: 2,
-            navigation: false,
           },
           992: {
             slidesPerView: 3,
-            navigation: navigation,
           },
         }}
       >

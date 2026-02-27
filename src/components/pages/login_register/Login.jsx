@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputLabel from "../../common/InputLabel";
 import Button from "../../common/Button";
+import Swal from "sweetalert2"; // ✅ SweetAlert2 importu
 
 function Login() {
   const navigate = useNavigate();
@@ -35,18 +35,30 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        console.log("Login successful:", data);
-
         localStorage.setItem("accessToken", data.accessToken);
 
-        alert("Login successful!");
-        navigate("/");
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then(() => {
+          navigate("/");
+        });
       } else {
-        alert(data.message || "Login failed");
+        Swal.fire({
+          title: "Login Failed",
+          text: data.message,
+          icon: "error",
+          confirmButtonText: "Try Again",
+        });
       }
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+      Swal.fire({
+        title: "Something went wrong",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     }
   };
 

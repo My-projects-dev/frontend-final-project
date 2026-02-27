@@ -1,0 +1,69 @@
+@use "../../abstracts/mixins";
+@use "../../abstracts/variables";
+
+.last_offer_section {
+  background-image: url("../../../img/last-offer-background.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 520px;
+  width: 100%;
+  display: flex;
+  color: #fff;
+
+  .img_container,
+  .data_container {
+    flex-basis: 50%;
+  }
+
+  .img_container {
+    @include mixins.flex();
+    figure {
+      width: 70%;
+    }
+  }
+
+  .data_container {
+    @include mixins.flex($align: flex-start, $gap: 25px);
+
+    h2 {
+      font-size: 60px;
+    }
+  }
+
+  a {
+    color: black;
+    background-color: #fff;
+    padding: 15px 30px;
+    margin-top: 30px;
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+
+  .date_container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-end;
+  }
+
+  .date {
+    border: 2px solid #fff;
+    text-align: center;
+    width: 65px;
+    padding: 10px 0;
+    height: fit-content;
+
+    &__line {
+      height: 1px;
+      width: 70%;
+      margin: 4px auto;
+      background-color: #fff;
+    }
+
+    &__time {
+      font-size: 25px;
+    }
+  }
+}
