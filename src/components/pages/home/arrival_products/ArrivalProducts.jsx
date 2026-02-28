@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/grid";
 
 import Datas from "../../../../Datas";
-import ArrivalProduct from "./ArrivalProduct";
+import ArrivalProductCart from "./ArrivalProductCart";
 
 const { products } = Datas;
 
@@ -39,7 +39,7 @@ function ArrivalProducts() {
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <ArrivalProduct product={product} />
+            <ArrivalProductCart product={product} />
           </SwiperSlide>
         ))}
       </Swiper>

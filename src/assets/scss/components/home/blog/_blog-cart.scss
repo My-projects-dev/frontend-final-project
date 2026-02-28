@@ -1,0 +1,69 @@
+@use "../../../abstracts/mixins";
+@use "../../../abstracts/variables";
+
+.blog_cart {
+  background-color: #f5f6fb;
+  color: variables.$secondary-color;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  &:hover .blog_cart__data a.button {
+    background-color: variables.$primary-color;
+  }
+
+  &:hover .blog_cart__data a.title {
+    color: variables.$primary-color;
+  }
+
+  &:hover .blog_cart_img img {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  .blog_cart_img {
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+
+    img {
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+}
+
+.blog_cart .blog_cart__data {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px 25px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    .calendar {
+      margin-right: 5px;
+    }
+  }
+
+  a.title {
+    @include mixins.font(700, 25px);
+    color: black;
+    transition: color 0.3s ease-in-out;
+  }
+
+  a.button {
+    background-color: #212529;
+    padding: 10px 15px;
+    color: #f5f6fb;
+    width: fit-content;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+  }
+}

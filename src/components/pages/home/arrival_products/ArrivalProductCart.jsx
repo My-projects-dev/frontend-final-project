@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { addToCart } from "../../../../store/cartSlice";
 
-function ArrivalProduct({ product }) {
+function ArrivalProductCart({ product }) {
   const dispatch = useDispatch();
 
   return (
@@ -48,4 +48,4 @@ function ArrivalProduct({ product }) {
     </div>
   );
 }
-export default ArrivalProduct;
+export default ArrivalProductCart;

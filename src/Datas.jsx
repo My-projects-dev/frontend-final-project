@@ -427,6 +427,57 @@ const offers = [
   },
 ];
 
+const blogs = [
+  {
+    id: 1,
+    title: "Lorem ipsum dolor consec adipisicing elit",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-1-370x315.jpg",
+  },
+  {
+    id: 2,
+    title: "Voluptate minus temporibus nostrum adipi",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-2-370x315.jpg",
+  },
+  {
+    id: 3,
+    title: "Corporis tempora molestiae nulla esse ipsam",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-3-370x315.jpg",
+  },
+  {
+    id: 4,
+    title: "Lorem ipsum dolor consec adipisicing elit",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-1-370x315.jpg",
+  },
+  {
+    id: 5,
+    title: "Voluptate minus temporibus nostrum adipi",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-2-370x315.jpg",
+  },
+  {
+    id: 6,
+    title: "Corporis tempora molestiae nulla esse ipsam",
+    description:
+      "Lorem ipsum dolor sit amet, consectet adipi elit, sed do eius tempor incididunt ut labore gthydolore magna aliqua.",
+    image:
+      "https://template.hasthemes.com/harmic/harmic/assets/images/blog/medium-size/1-3-370x315.jpg",
+  },
+];
+
 export default {
   languages,
   country,
@@ -437,4 +488,5 @@ export default {
   slider,
   features,
   offers,
+  blogs,
 };

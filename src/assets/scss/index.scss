@@ -32,7 +32,9 @@
 @use "./components/home/product-with-scrool";
 @use "./components/home/last-offer";
 @use "./components/home/arrival_products/arrival-products";
-@use "./components/home/arrival_products/arrival-product";
+@use "./components/home/arrival_products/arrival-product-cart";
+@use "./components/home/blog/blogs";
+@use "./components/home/blog/blog-cart";
 
 @use "./components/shop/shop";
 @use "./components/shop/product-topbar";

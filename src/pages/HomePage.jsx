@@ -1,4 +1,5 @@
 import ArrivalProducts from "../components/pages/home/arrival_products/ArrivalProducts";
+import Blogs from "../components/pages/home/blogs/Blogs";
 import Features from "../components/pages/home/feature/Features";
 import LastOffer from "../components/pages/home/LastOffer";
 import Offers from "../components/pages/home/offer/Offers";
@@ -16,6 +17,7 @@ function HomePage() {
       <ProductsWithScrool title="See Our Latest" subtitle="Arrival Products" />
       <LastOffer />
       <ArrivalProducts />
+      <Blogs />
     </>
   );
 }
