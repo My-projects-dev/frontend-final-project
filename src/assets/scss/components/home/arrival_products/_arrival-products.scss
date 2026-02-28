@@ -1,0 +1,30 @@
+@use "../../../abstracts/mixins";
+@use "../../../abstracts/variables";
+
+.arrival_product_section {
+  padding-inline: 8%;
+  margin-block: 100px;
+
+  &__header {
+    @include mixins.flex($gap: 20px);
+    margin-bottom: 50px;
+
+    width: 100%;
+
+    h2 {
+      font-size: 35px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      color: variables.$primary-color;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .arrival_product_section {
+    padding-inline: 5%;
+  }
+}

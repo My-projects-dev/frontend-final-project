@@ -64,10 +64,12 @@ function SideCart({ open, onClose }) {
           </ul>
         </div>
 
-        <div className="toggle_shopping_total">
-          <span>Subtotal</span>
-          <span className="toggle_shopping_total__price">${totalPrice}</span>
-        </div>
+        {cart.length > 0 && (
+          <div className="toggle_shopping_total">
+            <span>Subtotal</span>
+            <span className="toggle_shopping_total__price">${totalPrice}</span>
+          </div>
+        )}
 
         <div className="side_shop__btn_gropup">
           <Link to="/cart" onClick={onClose}>

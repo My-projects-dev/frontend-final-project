@@ -23,15 +23,15 @@ function MobileMenuContent({ onClose }) {
             <DropDown options={currency} className="toggle_currency" />
           </li>
           <li>
-            <LoginLogo className="toggle_login" arrow />
+            <LoginLogo className="toggle_login" arrow onClose={onClose} />
           </li>
           <li>
-            <LikeLogo />
+            <LikeLogo onClose={onClose} />
           </li>
         </ul>
       </div>
 
-      <Navbar className="toggle_nav" />
+      <Navbar className="toggle_nav" onClose={onClose} />
     </>
   );
 }

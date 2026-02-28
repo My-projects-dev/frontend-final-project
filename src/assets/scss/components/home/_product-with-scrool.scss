@@ -7,7 +7,7 @@
   margin: 100px 0;
 
   &__header {
-    @include mixins.flex();
+    @include mixins.flex($gap: 20px);
     margin-bottom: 50px;
 
     h2 {

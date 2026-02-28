@@ -33,7 +33,7 @@
   a {
     color: black;
     background-color: #fff;
-    padding: 15px 30px;
+    padding: 15px 40px;
     margin-top: 30px;
 
     &:hover {
@@ -64,6 +64,39 @@
 
     &__time {
       font-size: 25px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.last_offer_section {
+    flex-direction: column;
+    height: 850px;
+    background-color: darkblue;
+    background-size: cover;
+    padding: 50px 5%;
+
+    .img_container {
+      figure {
+        width: auto;
+      }
+    }
+
+    .data_container {
+      align-items: center;
+    }
+
+    .data_container h2 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  section.last_offer_section {
+    .date_container {
+      flex-wrap: wrap;
+      align-items: center;
     }
   }
 }

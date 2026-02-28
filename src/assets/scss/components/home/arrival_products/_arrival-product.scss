@@ -1,0 +1,50 @@
+@use "../../../abstracts/mixins";
+@use "../../../abstracts/variables";
+
+.arrival_product_container {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+  border: variables.$secondary-opocity-border;
+
+  &__img {
+    width: 25%;
+    height: 100%;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  ul.stars {
+    display: flex;
+    gap: 5px;
+    color: variables.$star-color;
+  }
+
+  .cart {
+    position: absolute;
+    bottom: -55px;
+    right: 10px;
+    background-color: variables.$primary-color;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+  &:hover .cart {
+    opacity: 1;
+    transform: translateY(-65px);
+  }
+}

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-function LoginLogo({ className = "", arrow = false }) {
+function LoginLogo({ className = "", arrow = false, onClose }) {
   const [show, setShow] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -34,11 +34,15 @@ function LoginLogo({ className = "", arrow = false }) {
         <ul>
           {token ? (
             <li>
-              <Link to="/account">My account</Link>
+              <Link to="/account" onClick={onClose}>
+                My account
+              </Link>
             </li>
           ) : (
             <li>
-              <Link to="/login-register">Login | Register</Link>
+              <Link to="/login-register" onClick={onClose}>
+                Login | Register
+              </Link>
             </li>
           )}
         </ul>

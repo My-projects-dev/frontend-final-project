@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function LastOffer() {
-  const targetDate = new Date("2030-05-10T00:00:00").getTime();
+  const targetDate = new Date("2026-05-10T00:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -62,7 +62,7 @@ function LastOffer() {
 
         <div className="date_container">
           <div className="date">
-            <p className="date__time">0-{timeLeft.days}</p>
+            <p className="date__time">{timeLeft.days}</p>
             <div className="date__line"></div>
             <p className="date__text">Day</p>
           </div>
