@@ -19,7 +19,7 @@ function ProductsWithScrool({
   return (
     <section className="product_with_swiper_section">
       <div className="product_with_swiper_section__header">
-        <h3>{subtitle}</h3>
+        <h5>{subtitle}</h5>
         <h2>{title}</h2>
       </div>
       <Swiper

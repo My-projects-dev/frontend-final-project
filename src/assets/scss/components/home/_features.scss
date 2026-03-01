@@ -2,8 +2,10 @@
 @use "../../abstracts/variables";
 
 section.features_section {
+  font-family: "Playfair Display";
   @include mixins.grid();
   padding: 100px 8%;
+
   .feature {
     @include mixins.flex($direction: row, $gap: 20px, $justify: flex-start);
     border: 2px solid variables.$primary-color;

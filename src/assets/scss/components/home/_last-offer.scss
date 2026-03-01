@@ -26,6 +26,7 @@
     @include mixins.flex($align: flex-start, $gap: 25px);
 
     h2 {
+      font-family: "Playfair Display";
       font-size: 60px;
     }
   }

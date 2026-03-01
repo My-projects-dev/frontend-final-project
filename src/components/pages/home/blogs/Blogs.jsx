@@ -12,7 +12,7 @@ function Blogs() {
   return (
     <section className="blog_with_swiper_section">
       <div className="blog_with_swiper_section__header">
-        <h3>Read Our</h3>
+        <h5>Read Our</h5>
         <h2>Latest Blog</h2>
       </div>
       <Swiper

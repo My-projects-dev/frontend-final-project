@@ -19,6 +19,7 @@
 
     & > li {
       padding-right: 10px;
+      font-size: 0.9rem;
 
       &:not(:last-child) {
         border-right: variables.$secondary-opocity-border;

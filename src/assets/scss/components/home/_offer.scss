@@ -2,6 +2,7 @@
 @use "../../abstracts/variables";
 
 section.offer_section {
+  font-family: "Playfair Display";
   @include mixins.flex($direction: row, $gap: 30px, $justify: flex-start);
   flex-wrap: wrap;
   padding-inline: 8%;
@@ -26,7 +27,7 @@ section.offer_section {
     @include mixins.flex($justify: space-around, $align: flex-start);
     height: 100%;
     padding: 30px;
-    width: 50%;
+    width: 52%;
     z-index: 1;
 
     position: absolute;

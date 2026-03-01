@@ -1,10 +1,39 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp, faHeart } from "@fortawesome/free-solid-svg-icons";
 import SiteIcon from "../components/common/SiteIcon";
 import PaymentMethods from "../assets/img/payment-methods.webp";
 
 function Footer() {
+  const [visible, setVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === 0) {
+        setVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer>
       <div className="footer_top">
@@ -88,6 +117,11 @@ function Footer() {
             </form>
           </div>
         </div>
+        <FontAwesomeIcon
+          icon={faAngleUp}
+          className={`faAngleUp ${visible ? "show" : ""}`}
+          onClick={scrollToTop}
+        />
       </div>
       <div className="footer_bottom">
         <p>

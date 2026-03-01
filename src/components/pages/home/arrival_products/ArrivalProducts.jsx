@@ -13,7 +13,7 @@ function ArrivalProducts() {
   return (
     <section className="arrival_product_section">
       <div className="arrival_product_section__header">
-        <h3>See Our Latest</h3>
+        <h5>See Our Latest</h5>
         <h2>Arrival Products</h2>
       </div>
 

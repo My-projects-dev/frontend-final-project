@@ -2,6 +2,7 @@
 @use "../abstracts/variables";
 
 .bread-crump {
+  font-family: "Playfair Display";
   @include mixins.flex($gap: 15px);
   background-image: url("../../img/bread-crumb-bg.webp");
   background-repeat: no-repeat;

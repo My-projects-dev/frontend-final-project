@@ -17,6 +17,7 @@
       padding-right: 6px;
       width: 190px;
       border-radius: 5px;
+      font-size: 0.9rem;
 
       &:hover {
         color: inherit;
@@ -54,7 +55,7 @@
     &__search_input {
       height: 50px;
       font-size: 1rem;
-      padding-inline: 10px;
+      padding-inline: 20px;
       border: variables.$secondary-opocity-border;
       outline: none;
       border-radius: 5px;

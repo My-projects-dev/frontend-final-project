@@ -14,7 +14,7 @@ function HomePage() {
       <Features />
       <ProductCategory />
       <Offers />
-      <ProductsWithScrool title="See Our Latest" subtitle="Arrival Products" />
+      <ProductsWithScrool subtitle="See Our Latest" title="Arrival Products" />
       <LastOffer />
       <ArrivalProducts />
       <Blogs />

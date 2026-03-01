@@ -14,7 +14,6 @@ nav.header_nav {
 
     li > a {
       color: #fff;
-      @include mixins.font(500, 20px);
     }
   }
 }

@@ -6,7 +6,8 @@
   margin-block: 100px;
 
   &__header {
-    @include mixins.flex($gap: 20px);
+    font-family: "Playfair Display";
+    @include mixins.flex();
     margin-bottom: 50px;
 
     width: 100%;
@@ -16,7 +17,7 @@
       text-transform: uppercase;
     }
 
-    h3 {
+    h5 {
       text-transform: uppercase;
       color: variables.$primary-color;
     }
