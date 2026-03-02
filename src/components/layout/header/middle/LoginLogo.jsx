@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../../../../context/AuthContext";
 
 function LoginLogo({ className = "", arrow = false, onClose }) {
+  const { user } = useAuth();
   const [show, setShow] = useState(false);
   const dropdownRef = useRef(null);
-
-  const token = localStorage.getItem("accessToken");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,7 +32,7 @@ function LoginLogo({ className = "", arrow = false, onClose }) {
 
       {show && (
         <ul>
-          {token ? (
+          {user ? (
             <li>
               <Link to="/account" onClick={onClose}>
                 My account

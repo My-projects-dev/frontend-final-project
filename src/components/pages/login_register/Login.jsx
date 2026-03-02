@@ -2,63 +2,40 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import InputLabel from "../../common/InputLabel";
 import Button from "../../common/Button";
-import Swal from "sweetalert2"; // ✅ SweetAlert2 importu
+import Swal from "sweetalert2";
+import { useAuth } from "../../../context/AuthContext";
 
 function Login() {
+  const { setUser } = useAuth();
   const navigate = useNavigate();
-
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-  });
+  const [form, setForm] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await fetch("https://dummyjson.com/auth/login", {
+      const response = await fetch("http://localhost/api/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: form.username,
-          password: form.password,
-        }),
+        body: JSON.stringify(form),
+        credentials: "include",
       });
 
-      const data = await res.json();
+      const data = await response.json();
+      console.log(data);
 
-      if (res.ok) {
-        localStorage.setItem("accessToken", data.accessToken);
-
-        Swal.fire({
-          title: "Login Successful!",
-          icon: "success",
-          confirmButtonText: "OK",
-        }).then(() => {
-          navigate("/");
-        });
+      if (response.ok) {
+        Swal.fire("Success", data.message, "success");
+        setUser(data.user);
+        navigate("/");
       } else {
-        Swal.fire({
-          title: "Login Failed",
-          text: data.message,
-          icon: "error",
-          confirmButtonText: "Try Again",
-        });
+        Swal.fire("Error", data.error || "Login failed", "error");
       }
-    } catch (error) {
-      console.log(error);
-      Swal.fire({
-        title: "Something went wrong",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+    } catch (err) {
+      Swal.fire("Error", "Server error", "error");
     }
   };
 
@@ -68,13 +45,13 @@ function Login() {
 
       <form onSubmit={handleSubmit}>
         <InputLabel
-          id="login_username"
-          name="username"
+          id="login_email"
+          name="email"
           type="text"
-          placeholder="Username"
+          placeholder="Email Address"
           onChange={handleChange}
         >
-          Username*
+          Email Address*
         </InputLabel>
 
         <InputLabel

@@ -25,6 +25,7 @@
     font-weight: 700;
     cursor: pointer;
     overflow: hidden;
+    padding: 15px 20px;
 
     &:hover {
       color: variables.$primary-color;
@@ -45,7 +46,6 @@
 
   li:not(:last-child) {
     border-bottom: 2px solid gray;
-    padding: 15px 20px;
   }
 }
 

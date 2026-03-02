@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom/client";
+import { AuthProvider } from "./context/AuthContext";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
@@ -8,11 +8,13 @@ import "./assets/scss/index.scss";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PersistGate>
-  </Provider>,
+  <AuthProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </AuthProvider>,
 );
